@@ -1,7 +1,13 @@
 package org.hbrs.se1.ws25.exercises.uebung1.view;
+import org.hbrs.se1.ws25.exercises.uebung1.control.Factory;
+import org.hbrs.se1.ws25.exercises.uebung1.control.Translator;
 
 public class Client {
+    private Translator translator;
 
+    public Client(){
+        this.translator = Factory.createGermanTranslator();
+    }
 	/**
 		 * Methode zur Ausgabe einer Zahl auf der Console
 		 * (auch bezeichnet als CLI, Terminal)
@@ -13,9 +19,8 @@ public class Client {
 			// aufgerufen werden.
 			//
 			// Strenge Implementierung (nur) gegen das Interface Translator gewuenscht!
-
-			 System.out.println("Das Ergebnis der Berechnung: " +
-					"[das Ergebnis an dieser Stelle]" );
+             String result = this.translator.translateNumber(aNumber);
+             System.out.println("Das Ergebnis der Uebersetzung fuer die Zahl " + aNumber + " ist: " + result );
 		 }
 }
 

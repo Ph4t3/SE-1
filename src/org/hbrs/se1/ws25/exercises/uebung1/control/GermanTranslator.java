@@ -8,7 +8,12 @@ public class GermanTranslator implements Translator {
 	 * Methode zur Übersetzung einer Zahl in eine String-Repraesentation
 	 */
 	 public String translateNumber(int number) {
-		return String.valueOf(number);
+         String[] words = {"eins","zwei","drei","vier","fuenf","sechs","sieben","acht","neun","zehn"};
+         try {
+             return words[number-1];
+         } catch (ArrayIndexOutOfBoundsException e) {
+             return "Uebersetzung der Zahl " + number + " nicht moeglich (Translator Version: " + Translator.version + ")";
+         }
 	}
 
 	/**
