@@ -1,4 +1,4 @@
-# Ergebnisse der SE-1 Uebungen fuer pschoe2s
+# Ergebnisse der SE-1 Uebungen für pschoe2s
 
 ## GitHub-Seite der Veranstaltung SE-1 (Code-Repository)
 
