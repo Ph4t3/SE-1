@@ -1,4 +1,4 @@
-package org.hbrs.se1.ws25.exercises.uebung2;
+package org.hbrs.se1.ws25.exercises.uebung2.Aufgabe_2;
 
 public interface Member {
 
