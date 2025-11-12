@@ -1,4 +1,4 @@
-package org.hbrs.se1.ws25.exercises.uebung4.persistence;
+package org.hbrs.se1.ws25.exercises.uebung4.Aufgabe_2.persistence;
 
 public class PersistenceException extends Exception {
 

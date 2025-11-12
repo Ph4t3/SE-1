@@ -1,7 +1,7 @@
-package org.hbrs.se1.ws25.exercises.uebung3.control;
+package org.hbrs.se1.ws25.exercises.uebung3.Aufgabe_2.control;
 
-import org.hbrs.se1.ws25.exercises.uebung3.persistence.PersistenceException;
-import org.hbrs.se1.ws25.exercises.uebung3.persistence.PersistenceStrategy;
+import org.hbrs.se1.ws25.exercises.uebung3.Aufgabe_2.persistence.PersistenceException;
+import org.hbrs.se1.ws25.exercises.uebung3.Aufgabe_2.persistence.PersistenceStrategy;
 
 import java.util.ArrayList;
 import java.util.List;

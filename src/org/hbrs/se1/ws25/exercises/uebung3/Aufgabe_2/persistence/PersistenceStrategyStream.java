@@ -1,4 +1,4 @@
-package org.hbrs.se1.ws25.exercises.uebung3.persistence;
+package org.hbrs.se1.ws25.exercises.uebung3.Aufgabe_2.persistence;
 import java.util.List;
 
 public class PersistenceStrategyStream<E> implements PersistenceStrategy<E> {

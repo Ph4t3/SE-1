@@ -1,6 +1,6 @@
-package org.hbrs.se1.ws25.exercises.uebung4.view;
+package org.hbrs.se1.ws25.exercises.uebung4.Aufgabe_2.view;
 
-import org.hbrs.se1.ws25.exercises.uebung4.control.UserStory;
+import org.hbrs.se1.ws25.exercises.uebung4.Aufgabe_2.control.UserStory;
 
 import java.util.Collections;
 import java.util.List;

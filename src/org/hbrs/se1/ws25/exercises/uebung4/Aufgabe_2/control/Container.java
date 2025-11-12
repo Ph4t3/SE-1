@@ -1,8 +1,7 @@
-package org.hbrs.se1.ws25.exercises.uebung4.control;
+package org.hbrs.se1.ws25.exercises.uebung4.Aufgabe_2.control;
 
 import java.io.*;
 import java.util.*;
-import java.util.stream.Collectors;
 
 /*
  * Klasse zum Management sowie zur Eingabe unnd Ausgabe von User-Stories.

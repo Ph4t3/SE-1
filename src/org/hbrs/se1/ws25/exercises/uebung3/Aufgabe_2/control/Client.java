@@ -1,6 +1,6 @@
-package org.hbrs.se1.ws25.exercises.uebung3.control;
+package org.hbrs.se1.ws25.exercises.uebung3.Aufgabe_2.control;
 
-import org.hbrs.se1.ws25.exercises.uebung3.view.MemberView;
+import org.hbrs.se1.ws25.exercises.uebung3.Aufgabe_2.view.MemberView;
 
 public class Client {
     public static void main(String[] args) {

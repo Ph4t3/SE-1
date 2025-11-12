@@ -1,4 +1,8 @@
-package org.hbrs.se1.ws25.exercises.uebung2;
+package org.hbrs.se1.ws25.tests.uebung3;
+
+import org.hbrs.se1.ws25.exercises.uebung3.Aufgabe_2.control.ConcreteMember;
+import org.hbrs.se1.ws25.exercises.uebung3.Aufgabe_2.control.Container;
+import org.hbrs.se1.ws25.exercises.uebung3.Aufgabe_2.control.ContainerException;
 
 public class ContainerTest {
 
@@ -7,7 +11,7 @@ public class ContainerTest {
         test.runTests();
     }
 
-    private  Container container = new Container();
+    private Container container = new Container();
 
     public void runTests() {
 

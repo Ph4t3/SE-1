@@ -1,4 +1,4 @@
-package org.hbrs.se1.ws25.exercises.uebung4.control;
+package org.hbrs.se1.ws25.exercises.uebung4.Aufgabe_2.control;
 
 import java.io.Serializable;
 
