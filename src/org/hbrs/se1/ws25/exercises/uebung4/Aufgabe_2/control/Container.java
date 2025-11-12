@@ -1,4 +1,4 @@
-package org.hbrs.se1.ws25.exercises.uebung4.prototype;
+package org.hbrs.se1.ws25.exercises.uebung4.control;
 
 import java.io.*;
 import java.util.*;
