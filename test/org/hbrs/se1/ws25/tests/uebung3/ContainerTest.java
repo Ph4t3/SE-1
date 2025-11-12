@@ -1,65 +1,123 @@
-package org.hbrs.se1.ws25.tests.uebung3;
+package org.hbrs.se1.ws25.exercises.uebung2;
 
-import org.hbrs.se1.ws25.exercises.uebung2.Member;
-import org.hbrs.se1.ws25.exercises.uebung3.persistence.*;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+public class ContainerTest {
 
-class ContainerTest {
-
-    // private Container container;
-
-    @BeforeEach
-    void setUp() {
-        // Hier muss der Container einmalig als Singleton instanziiert werden.
+    public static void main(String[] args) {
+        ContainerTest test = new ContainerTest();
+        test.runTests();
     }
 
-    @Test
-    void testMongoDBNotImplementedSolution() {
-        // Set a strategy, which has not been implemented
-        // container.setPersistenceStrategie( new PersistenceStrategyMongoDB<Member>() );
+    private  Container container = new Container();
 
-        // Testing store
-        // Hinweis: Beim Aufruf der Methoden store() oder load() muss eine Exception vom Typ
-        // PersistenceException zurückgegeben werden. Der ExceptionType lautet ImplementationNotAvailable
-        // Die Message (abrufbar mit der Methode e.getMessage() ) muss einen eindeutigen Text haben, z.B.:
-        // assertEquals( e.getMessage() , "MongoDB is not implemented!"  );
+    public void runTests() {
+
+
+        testCase1_addMember1();
+        testCase2_addMember2();
+        testCase3_addDuplicate();
+        testCase4_deleteMember2();
+        testCase5_deleteMember1();
+        testCase6_addNull();
+
+
     }
 
-    @Test
-    void testNoStrategeySet() {
-        //
-            // container.setPersistenceStrategie(null);
-            // container.store();
-        // } catch (PersistenceException e) {
-            // Bitte auch hier die Message und den ExceptionType prüfen.
-        // }
+    void testCase1_addMember1() {
+        System.out.println("TC1: add new Member(1)");
+        try {
+            container.addMember(new ConcreteMember(1, "A"));
+            int size = container.size();
+            if (size == 1) {
+                System.out.println("OK → size == 1");
+            } else {
+                System.out.println("FAIL → expected size 1 but got " + size);
+            }
+        } catch (Exception e) {
+            System.out.println("FAIL → unexpected exception: " + e.getMessage());
+        }
+        System.out.println();
     }
 
-    @Test
-    void testWrongLocationOfFile() {
-        // try {
-           //  PersistenceStrategyStream<Member> strat = new PersistenceStrategyStream<Member>();
-            // FileStreams do not like directories, so try this out ;-)
-            // strat.setLocation("/Users/saschaalda/tmp");
-            // container.setPersistenceStrategie( strat );
-            // container.store();
-
-        // } catch (PersistenceException e) {
-            // Auch hier diverse Assertions bringen, um die Nachricht und den ExceptionType zu testen.
-        // }
+    void testCase2_addMember2() {
+        System.out.println("TC2: add new Member(2)");
+        try {
+            container.addMember(new ConcreteMember(2, "B"));
+            int size = container.size();
+            if (size == 2) {
+                System.out.println("OK → size == 2");
+            } else {
+                System.out.println("FAIL → expected size 2 but got " + size);
+            }
+        } catch (Exception e) {
+            System.out.println("FAIL → unexpected exception: " + e.getMessage());
+        }
+        System.out.println();
     }
 
-    @Test
-    void testStoreDeleteAndLoad() {
-        // Testen Sie folgenden RoundTrip:
-        // 1. Lösche alle Member-Objekte (Sicher ist sicher! Dazu die Methode deleteAllMember implementieren!)
-        // 2. Setzen der Strategie
-        // 3. Hinzufügen eines Member-Objekts
-        // 4. Abspeichern
-        // 5. Löschen des Member-Objekts
-        // 6. Laden
-        // Die Zustandsänderungen mittels der size() bitte stets testen!
+    void testCase3_addDuplicate() {
+        System.out.println("TC3: add cloned Member(2)");
+        try {
+            container.addMember(new ConcreteMember(2, "B-dup"));
+            System.out.println("FAIL → duplicate accepted!");
+        } catch (ContainerException e) {
+            System.out.println("OK → duplicate correctly rejected: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("FAIL → wrong exception: " + e.getMessage());
+        }
+        System.out.println("size() = " + container.size());
+        System.out.println();
     }
 
+    void testCase4_deleteMember2() {
+        System.out.println("TC4: delete Member(2)");
+        try {
+            String msg = container.deleteMember(2);
+            System.out.println("deleteMember() → " + msg);
+            int size = container.size();
+            if (size == 1) {
+                System.out.println("OK → size == 1");
+            } else {
+                System.out.println("FAIL → expected size 1 but got " + size);
+            }
+        } catch (Exception e) {
+            System.out.println("FAIL → unexpected exception: " + e.getMessage());
+        }
+        System.out.println();
+    }
+
+    void testCase5_deleteMember1() {
+        System.out.println("TC5: delete Member(1)");
+        try {
+            String msg = container.deleteMember(1);
+            System.out.println("deleteMember() → " + msg);
+            int size = container.size();
+            if (size == 0) {
+                System.out.println("OK → size == 0");
+            } else {
+                System.out.println("FAIL → expected size 0 but got " + size);
+            }
+        } catch (Exception e) {
+            System.out.println("FAIL → unexpected exception: " + e.getMessage());
+        }
+        System.out.println();
+    }
+
+    void testCase6_addNull() {
+        System.out.println("TC6: add null");
+        try {
+            container.addMember(null);
+            System.out.println("FAIL → null was accepted!");
+        } catch (IllegalArgumentException e) {
+            System.out.println("OK → IllegalArgumentException caught as expected");
+        } catch (Exception e) {
+            System.out.println("FAIL → wrong exception: " + e.getMessage());
+        }
+        int size = container.size();
+        if (size == 0) {
+            System.out.println("OK → size == 0");
+        } else {
+            System.out.println("FAIL → expected size 0 but got " + size);
+        }
+        System.out.println();
+    }
 }
