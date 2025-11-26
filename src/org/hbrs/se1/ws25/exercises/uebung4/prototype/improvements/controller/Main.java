@@ -1,6 +1,7 @@
 package org.hbrs.se1.ws25.exercises.uebung4.prototype.improvements.controller;
 
 import org.hbrs.se1.ws25.exercises.uebung4.prototype.improvements.model.Container;
+import org.hbrs.se1.ws25.exercises.uebung4.prototype.improvements.model.persistence.PersistenceStrategyStream;
 
 public class Main {
 
@@ -9,6 +10,7 @@ public class Main {
       */
     public static void main (String[] args) throws Exception {
         Container con = Container.getInstance();
+        con.setPersistenceStrategy( new PersistenceStrategyStream() );
         InputDialog dialog = new InputDialog();
         dialog.startEingabe();
     }

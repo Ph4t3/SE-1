@@ -1,5 +1,9 @@
 package org.hbrs.se1.ws25.exercises.uebung4.prototype.improvements.model;
 
+import org.hbrs.se1.ws25.exercises.uebung4.prototype.improvements.model.persistence.PersistenceException;
+import org.hbrs.se1.ws25.exercises.uebung4.prototype.improvements.model.persistence.PersistenceStrategy;
+import org.hbrs.se1.ws25.exercises.uebung4.prototype.improvements.model.persistence.PersistenceStrategyStream;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -57,62 +61,44 @@ public class Container {
 	private Container(){
 		liste = new ArrayList<UserStory>();
 	}
+
+	private PersistenceStrategy strategy = null;
+
+	public void setPersistenceStrategy( PersistenceStrategy strategy ) {
+		this.strategy = strategy;
+	}
 	
 	/**
 
 	/*
 	 * Methode zum Speichern der Liste. Es wird die komplette Liste
 	 * inklusive ihrer gespeicherten UserStory-Objekte gespeichert.
+	 * Verwendung der Klasse PersistenceStrategyStream
+	 *
 	 * 
 	 */
-	public void store() throws ContainerException {
-		ObjectOutputStream oos = null;
-		FileOutputStream fos = null;
-		try {
-			fos = new FileOutputStream( Container.LOCATION );
-			oos = new ObjectOutputStream(fos);
-			
-			oos.writeObject( this.liste );
-			System.out.println( this.size() + " UserStory wurden erfolgreich gespeichert!");
-		}
-		catch (IOException e) {
-			// e.printStackTrace(); --> auskommentiert, stört ein wenig die Ausgabe
-		  	//  Delegation in den aufrufendem Context
-			 // (Anwendung Pattern "Chain Of Responsibility)
-		  throw new ContainerException("Fehler beim Abspeichern");
-		}
-	}
+	public void load() throws ContainerException {
+        try {
+            List<UserStory> liste = this.strategy.load();
+			this.liste = liste;
+        } catch (PersistenceException e) {
+            throw new ContainerException("Fehler beim Laden");
+        }
+    }
 
 	/*
 	 * Methode zum Laden der Liste. Es wird die komplette Liste
 	 * inklusive ihrer gespeicherten UserStory-Objekte geladen.
+	 * Verwendung der Klasse PersistenceStrategyStream
 	 * 
 	 */
-	public void load() {
-		ObjectInputStream ois = null;
-		FileInputStream fis = null;
-		try {
-		  fis = new FileInputStream( Container.LOCATION );
-		  ois = new ObjectInputStream(fis);
-		  
-		  // Auslesen der Liste
-		  Object obj = ois.readObject();
-		  if (obj instanceof List<?>) {
-			  this.liste = (List) obj;
-		  }
-		  System.out.println("Es wurden " + this.size() + " UserStory erfolgreich reingeladen!");
-		}
-		catch (IOException e) {
-			System.out.println("LOG (für Admin): Datei konnte nicht gefunden werden!");
-		}
-		catch (ClassNotFoundException e) {
-			System.out.println("LOG (für Admin): Liste konnte nicht extrahiert werden (ClassNotFound)!");
-		}
-		finally {
-		  if (ois != null) try { ois.close(); } catch (IOException e) {}
-		  if (fis != null) try { fis.close(); } catch (IOException e) {}
-		}
-	}
+	public void store() throws ContainerException {
+        try {
+            this.strategy.save(this.liste);
+        } catch (PersistenceException e) {
+			throw new ContainerException("Fehler beim Speichern");
+        }
+    }
 
 	/**
 	 * Methode zum Hinzufügen eines Mitarbeiters unter Wahrung der Schlüsseleigenschaft
