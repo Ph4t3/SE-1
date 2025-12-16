@@ -1,4 +1,4 @@
-package org.hbrs.se1.ws25.demo.kapitel6;
+package org.hbrs.se1.ws25.demo.kapitel6.swapping;
 
 public class KundenTausch {
 	

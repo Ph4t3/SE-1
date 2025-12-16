@@ -1,9 +1,8 @@
-package org.hbrs.se1.ws25.demo.kapitel6;
+package org.hbrs.se1.ws25.demo.kapitel6.backdoor;
 
 
 /**
  * Example for a back door in code (chapter 6, section 2):
- * 
  * Is there a back door given in this code?
  * 
  * @author saschaalda

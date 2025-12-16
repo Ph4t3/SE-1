@@ -1,8 +1,9 @@
-package org.hbrs.se1.ws25.demo.kapitel6;
+package org.hbrs.se1.ws25.demo.kapitel6.passing;
+import org.hbrs.se1.ws25.demo.kapitel6.swapping.Kunde;
 
 public class ReiseBuchen {
 	
-	public void checkKunde( Kunde k ,  int type ) {
+	public void checkKunde( Kunde k , int type ) {
 		k.setName( "Maier" );
 		type = 3; 
 	}

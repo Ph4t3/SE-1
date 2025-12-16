@@ -1,8 +1,6 @@
-# Ergebnisse der SE-1 Uebungen für pschoe2s
+## GitLab-Seite der Veranstaltung SE-1 (Code-Repository)
 
-## GitHub-Seite der Veranstaltung SE-1 (Code-Repository)
-
-Auf dieser GitHub-Seite finden sie die Source-Codes aus den Übungen sowie Demo-Codes aus den Vorlesungen. Sie finden hier zudem einige nützliche Links für die Übungen.
+Auf dieser GitLab-Seite finden Sie die Source-Codes aus den Übungen sowie Demo-Codes aus den Vorlesungen. Sie finden hier zudem einige nützliche Links für die Übungen.
 Die Seite ist noch im Aufbau und wird kontinuierlich überarbeitet.
 
 (Hinweis: diese Seite ist im Aufbau)
@@ -19,6 +17,13 @@ Hinweis: Diese Videos basieren auf einer etwas älteren Version von IntelliJ. Di
 
 [Teil 4: Pull von Änderungen bzw. von neuen Codes aus einem GitHub-Repository ](https://www.youtube.com/watch?v=I4L0k33TNQ4)
 
+Die folgenden englischsprachigen Video-Tutorials sind im Rahmen des SE-1-Semesterprojekts für internationale Studierende (WS 25/26) entstanden. Sie dienen als Einführung in die grundlegenden Funktionen von GitHub bzw. GitLab anhand eines einfachen Beispiels. <br>
+Die Screencasts können Ihnen im Hinblick auf SE-2, andere Module oder die private Nutzung von GitHub bzw. GitLab hilfreich sein. <br>
+
+* [Teil 1:](https://youtu.be/xiMG2ImmZZ8) In diesem Teil werden kurz die Unterschiede zwischen GitHub und GitLab hinsichtlich der verwendeten Begriffe und Bezeichnungen erläutert, die sich auf die gezeigten Funktionen in Teil 2 beziehen. Zusätzlich wird gezeigt, wie man die Projektstruktur ausgehend von einem leeren Repository anpassen kann.
+
+* [Teil 2:](https://youtu.be/XcOwifbd4eA) Hier werden die Funktionen sowie deren Bedeutung erläutert. In der Beschreibung befinden sich Timestamps, damit Sie beliebig zur gewünschten Stelle springen können.
+
 ### Literatur zu Software Engineering
 Eine Sammlung von Quellen und Ressourcen finden Sie auf den Literatur-Repro: <br>
 https://github.com/aldaGit/se-repository
@@ -31,13 +36,15 @@ Auf diesem Repository finden Sie viele nützliche Links, Publikationen und Hinwe
 [Draw.io](https://app.diagrams.net/) <br>
 Schlankes browser-basiertes Tool, keine Installation auf ihrem Rechner notwendig! Abspeicherung der Dokumente in verschiedenen Formen möglich (Lokal, Cloud). Läuft nativ ohne Plugin auf allen gängigen Browsern.
 
-[UMLet](http://www.umlet.com/) <br>
-Gutes und übersichtliches Tool zur Modellierung, installierbar für Windows / MAC / Linux.
-Unterstützt keine Sequenzdiagramme (Anpassung möglich). Bedienung etwas gewöhnungsbedürftig zu Beginn, dann aber sehr effektiv ;-)
-
 [Mermaid](https://mermaid.js.org/syntax/classDiagram.html) <br>
-Mermaid ist ein DSL-basierter Editor, der eine Vielzahl von Modellen und Diagrammtypen unterstützt. Anstelle eines grafischen Editors entwickelt man in Mermaid die Modelle mit Hilfe einer Sprache (einer sogenannten Domain Specific Language ([DSL](https://martinfowler.com/dsl.html))). Vorteil ist auch eine direkte [Integration](https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/) der Modelle in eine readme.md.
+Mermaid ist ein DSL-basierter Editor, der eine Vielzahl von Modellen und Diagrammtypen unterstützt. Anstelle eines grafischen Editors entwickelt man in Mermaid die Modelle mit Hilfe einer Sprache (einer sogenannten Domain Specific Language ([DSL](https://martinfowler.com/dsl.html)). Vorteil ist auch eine direkte [Integration](https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/) der Modelle in eine readme.md.
 
+### Hilfreiche Literatur und Links für die Java-Programmierung 
+
+Hier finden Sie hilfreiche Links zum Nachschlagen und zur Vertiefung grundlegender Konzepte und Themen der Java-Programmierung:
+
+* [Oracle Java Tutorials](https://docs.oracle.com/javase/tutorial/)
+* [Java ist auch eine Insel (Christian Ullenboom)](https://openbook.rheinwerk-verlag.de/javainsel/)
 
 
 ### IntelliJ als IDE
@@ -47,7 +54,7 @@ In den Vorlesungen SE-1 (BWI, BCSP) und SE-2 (BWI) wird die Verwendung der Entwi
 
 ### Links zu Markdown
 
-Sie möchten eine eigene readme.md (also eine wie diese Seite) implementieren? Hier ein hilfreicher Link eines einfachen Guides::
+Sie möchten eine eigene readme.md (also eine wie diese Seite) implementieren? Hier ein hilfreicher Link eines einfachen Guides:
 <br>
 [Markdown Guide](https://www.markdownguide.org/basic-syntax/)
 
